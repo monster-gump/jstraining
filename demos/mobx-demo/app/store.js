@@ -1,7 +1,7 @@
 import { observable, computed } from 'mobx';
 
 class Store {
-  @observable name = 'Bartek';
+  @observable name = 'Jeremy';
   @computed get decorated() {
     return `${this.name} is awesome!`;
   }

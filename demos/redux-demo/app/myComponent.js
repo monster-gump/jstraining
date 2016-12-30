@@ -6,7 +6,10 @@ class MyComponent extends React.Component {
     return (
       <div className="index">
         <p>{this.props.text}</p>
-        <input defaultValue={this.props.name} onChange={this.props.onChange} />
+        <input
+          defaultValue={this.props.name}
+          onChange={this.props.onChange}
+        />
       </div>
     );
   }

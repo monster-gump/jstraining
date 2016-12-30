@@ -13,7 +13,7 @@
     constructor(...args) {
       super(...args);
       this.state = {
-        name: '访问者'
+        name: 'visitor'
       };
     }
 
@@ -27,7 +27,7 @@
     render() {
       return <div>
         <input type="text" onChange={this.handleChange.bind(this)} />
-        <p>你好，{this.state.name}</p>
+        <p>Hello, {this.state.name}</p>
       </div>;
     }
   };

@@ -18,14 +18,23 @@
     }
 
     handleClick() {
+      let isClicked = !this.state.isClicked;
+      var d = new Date();
+      d.getFullYear() // 当前年份
+      d.getMonth() + 1 // 当前月份
+      d.getDate() // 当前是每个月的几号
       this.setState({
-        text: 'Clicked'
+        isClicked: isClicked,
+        text: isClicked ? 'Clicked' : 'World',
+        date: d.getFullYear() + " " + d.getMonth() + " " + d.getDate()
       });
     }
 
     render() {
       return <h1 onClick={this.handleClick.bind(this)}>
         {'Hello ' + this.state.text}
+        <br/> // 表示生成一个组件类的实例，每个实例一定要有闭合标签
+        {this.state.date}
       </h1>;
     }
   };
