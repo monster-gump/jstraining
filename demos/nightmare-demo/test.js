@@ -18,7 +18,30 @@ describe('test index.html', function() {
     child.kill();
   });
 
-  it('点击后标题改变', function (done) {
+  // still kind of confusing for this part
+  it('the color should be red', function (done) {
+    var nightmare = Nightmare({ show: true });
+    nightmare
+      .goto('http://127.0.0.1:8080/index.html')
+      .click('h1')
+      .wait(1000)
+      .evaluate(function () {
+        var ele = document.querySelector('h1'),
+        // var ele = document.getElementById('title')
+            // color = getComputedStyle(ele, 'color').content;
+            color = getComputedStyle(ele).color;
+        console.log(color);
+        return color;
+        // return document.querySelector('h1').textContent;
+      })
+      .end()
+      .then(function(color) {
+        expect(color).to.equal('rgb(255, 0, 0)');
+        done();
+      })
+  });
+
+  it('title changes after clicked', function (done) {
     var nightmare = Nightmare({ show: true });
     nightmare
       .goto('http://127.0.0.1:8080/index.html')
@@ -35,4 +58,3 @@ describe('test index.html', function() {
   });
 
 });
-
