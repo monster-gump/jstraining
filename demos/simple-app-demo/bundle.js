@@ -46,6 +46,7 @@
 
 	const $ = __webpack_require__(1);
 	$('h1').css({ color: 'red'});
+	$('h2').css({ color: 'blue'});
 
 
 /***/ },
